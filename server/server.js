@@ -20,8 +20,12 @@ connection.once("open", () => {
 
 //Routes setup
 const qaRouter = require("./routes/Qa");
+const userRouter = require("./routes/User");
+const authRoute = require("./routes/Auth");
 
 app.use("/Qas", qaRouter);
+app.use("/user", userRouter);
+app.use("/auth", authRoute);
 
 app.listen(port, () => {
   console.log(`server is running on port: ${port}`);
