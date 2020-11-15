@@ -17,8 +17,8 @@ router.route("/").get(async (req, res) => {
 //add elements
 router.route("/addqna").post(async (req, res) => {
   const Qnas = new Qna({
-    // name: req.body.name,
-    // occupation: req.body.occupation,
+    name: req.body.name,
+    occupation: req.body.occupation,
     subject: req.body.subject,
     question: req.body.question,
     // tags: req.body.tags,

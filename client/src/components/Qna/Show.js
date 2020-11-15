@@ -1,17 +1,19 @@
-// import React from "react";
-// const Show = (props) => {
-//   // console.log(props.questions);
-//   console.log("show called");
-//   return (
-//     <div>
-//       <tr>
-//         <td>{props.questions}</td>
-//       </tr>
-//       {/* <p>
-//           <Link to={"/qnas/" + props.exercise._id}>edit</Link> |{" "}
-//         </p> */}
-//     </div>
-//   );
-// };
+import React from "react";
+import { Link } from "react-router-dom";
+const Show = (props) => (
+  <tr>
+    Name<p>{props.questions.name}</p>
+    <br />
+    Occupation<p>{props.questions.occupation}</p>
+    <br />
+    Subject<p>{props.questions.subject}</p>
+    <br />
+    Question<p>{props.questions.question}</p>
+    <br />
+    <p>
+      <Link to={"/qnas/" + props.questions._id}>Answer</Link> |{" "}
+    </p>
+  </tr>
+);
 
-// export default Show;
+export default Show;

@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
+import AuthContext from "../../context/auth/authContext";
 
 const Ask = () => {
+  const authContext = useContext(AuthContext);
+  useEffect(() => {
+    authContext.loadUser();
+    //eslint-disable-next-line
+  }, []);
   const [ask, setAsk] = useState({
     name: "",
     occupation: "",
@@ -29,7 +35,7 @@ const Ask = () => {
       .post("http://localhost:5000/Qas/add", Qnas)
       .then((res) => console.log(res.data));
 
-    // window.location = "/";
+    window.location = "/Ask";
   };
 
   return (

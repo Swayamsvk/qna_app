@@ -3,8 +3,8 @@ import axios from "axios";
 
 const Write = (props) => {
   const [qna, setQna] = useState({
-    // name: "",
-    // occupation: "",
+    name: "",
+    occupation: "",
     subject: "",
     question: "",
   });
@@ -17,8 +17,8 @@ const Write = (props) => {
       .get("http://localhost:5000/Qas/" + props.match.params.id)
       .then((response) => {
         setQna({
-          // name: response.data.name,
-          // occupation: response.data.occupation,
+          name: response.data.name,
+          occupation: response.data.occupation,
           subject: response.data.subject,
           question: response.data.question,
         });
@@ -32,8 +32,8 @@ const Write = (props) => {
     e.preventDefault();
 
     const Qnas = {
-      // name: name,
-      // occupation: occupation,
+      name: name,
+      occupation: occupation,
       subject: subject,
       question: question,
       answer: answer,
@@ -45,17 +45,18 @@ const Write = (props) => {
       .post("http://localhost:5000/Qnas/addqna", Qnas)
       .then((res) => console.log(res.data));
 
-    // window.location = "/";
+    window.location = "/qna";
   };
 
   return (
     <form onSubmit={onSubmit}>
-      {/* <input
+      <input
         type="text"
         placeholder="name"
         name="name"
         value={name}
         onChange={onChange}
+        disabled={true}
       />
       <input
         type="text"
@@ -63,6 +64,7 @@ const Write = (props) => {
         name="occupation"
         value={occupation}
         onChange={onChange}
+        disabled={true}
       />
       <input
         type="text"
@@ -70,13 +72,7 @@ const Write = (props) => {
         name="subject"
         value={subject}
         onChange={onChange}
-      /> */}
-      <input
-        type="text"
-        placeholder="subject"
-        name="subject"
-        value={subject}
-        onChange={onChange}
+        disabled={true}
       />
       <input
         type="text"
@@ -84,6 +80,7 @@ const Write = (props) => {
         name="question"
         value={question}
         onChange={onChange}
+        disabled={true}
       />
       <input
         type="text"
