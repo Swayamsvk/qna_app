@@ -20,10 +20,12 @@ connection.once("open", () => {
 
 //Routes setup
 const qaRouter = require("./routes/Qa");
+const qnaRouter = require("./routes/Qna");
 const userRouter = require("./routes/User");
 const authRoute = require("./routes/Auth");
 
 app.use("/Qas", qaRouter);
+app.use("/Qnas", qnaRouter);
 app.use("/user", userRouter);
 app.use("/auth", authRoute);
 

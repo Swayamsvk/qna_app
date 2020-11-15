@@ -13,6 +13,8 @@ import Login from "./components/auth/Login";
 import AlertState from "./context/alert/AlertState";
 import setAuthToken from "./utils/setAuthToken";
 import PrivateRoute from "./components/routing/PrivateRoute";
+import Write from "./components/Qna/Write";
+import Show from "./components/Qna/Show";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -32,7 +34,8 @@ function App() {
               <PrivateRoute exact path="/Academics" component={Academics} />
               <PrivateRoute exact path="/Ask" component={Ask} />
               <PrivateRoute exact path="/Programming" component={Programming} />
-              <PrivateRoute exact path="/Qna" component={Qna} />
+              <PrivateRoute exact path="/qna" component={Qna} />
+              <Route path="/qnas/:id" component={Write} />
 
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
