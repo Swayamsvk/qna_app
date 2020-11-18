@@ -2,11 +2,11 @@ import React from "react";
 
 const Show = ({ data }) => {
   return (
-    <div>
-      <tr>
-        <td>{data.question}</td>
-        <td>{data.answer}</td>
-      </tr>
+    <div style={{ paddingLeft: 20 }}>
+      <p>Q: {data.question}</p>
+      <br />
+      <p>A: {data.answer}</p>
+      <br />
     </div>
   );
 };

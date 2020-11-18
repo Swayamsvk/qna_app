@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import Show from "./Show";
 import AuthContext from "../../context/auth/authContext";
+import "./Academics.css";
 
 const Academics = () => {
   const authContext = useContext(AuthContext);
@@ -24,9 +25,9 @@ const Academics = () => {
 
   return (
     <div>
-      <div>Academics</div>
+      <div className="head">Academics</div>
 
-      <tbody>{dataList()}</tbody>
+      <div>{dataList()}</div>
     </div>
   );
 };

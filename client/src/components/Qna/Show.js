@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const Show = (props) => (
-  <tr>
+  <div style={{ paddingLeft: 20 }}>
     Name<p>{props.questions.name}</p>
     <br />
     Occupation<p>{props.questions.occupation}</p>
@@ -13,7 +13,8 @@ const Show = (props) => (
     <p>
       <Link to={"/qnas/" + props.questions._id}>Answer</Link> |{" "}
     </p>
-  </tr>
+    <br />
+  </div>
 );
 
 export default Show;

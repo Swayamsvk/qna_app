@@ -8,7 +8,23 @@ const Home = () => {
     authContext.loadUser();
     //eslint-disable-next-line
   }, []);
-  return <div className="Home">Home</div>;
+  return (
+    <div>
+      <div class="content">
+        <div class="info">
+          <h2>
+            Query Solver <br />
+            <span>Be Creative!</span>
+          </h2>
+          <p>
+            This is a website used by students and professors of Information
+            Technology Branch to discuss questions and answers of programming
+            and academics.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Home;

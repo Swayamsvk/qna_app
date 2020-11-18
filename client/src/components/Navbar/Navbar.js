@@ -15,7 +15,7 @@ const Navbar = () => {
   const authLinks = (
     <div className="navbar">
       <nav>
-        <div className="logo">Company Logo</div>
+        <div className="logo">Q</div>
         <div className="nav-wrapper">
           <ul className="menu-area">
             <li>
@@ -35,6 +35,7 @@ const Navbar = () => {
               <Link to="/qna">QNA</Link>
             </li>
             <a
+              className="logout"
               onClick={onLogout}
               href="#!"
               style={{
@@ -52,7 +53,7 @@ const Navbar = () => {
   const guestLinks = (
     <div className="navbar">
       <nav>
-        <div className="logo">Company Logo</div>
+        <div className="logo">Q</div>
         <div className="nav-wrapper">
           <ul className="menu-area">
             <li>
