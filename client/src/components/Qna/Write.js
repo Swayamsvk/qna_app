@@ -1,7 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import "./Write.css";
+import AuthContext from "../../context/auth/authContext";
 
 const Write = (props) => {
+  const authContext = useContext(AuthContext);
+  useEffect(() => {
+    authContext.loadUser();
+    //eslint-disable-next-line
+  }, []);
   const [qna, setQna] = useState({
     name: "",
     occupation: "",
@@ -57,6 +64,7 @@ const Write = (props) => {
         value={name}
         onChange={onChange}
         disabled={true}
+        className="field"
       />
       <input
         type="text"
@@ -65,6 +73,7 @@ const Write = (props) => {
         value={occupation}
         onChange={onChange}
         disabled={true}
+        className="field"
       />
       <input
         type="text"
@@ -73,6 +82,7 @@ const Write = (props) => {
         value={subject}
         onChange={onChange}
         disabled={true}
+        className="field"
       />
       <input
         type="text"
@@ -81,6 +91,7 @@ const Write = (props) => {
         value={question}
         onChange={onChange}
         disabled={true}
+        className="field"
       />
       <input
         type="text"
@@ -88,8 +99,10 @@ const Write = (props) => {
         name="answer"
         value={answer}
         onChange={changeAnswer}
+        className="field"
       />
-      <input type="submit" value="add question" />
+      <br />
+      <input type="submit" value="Answer" />
     </form>
   );
 };

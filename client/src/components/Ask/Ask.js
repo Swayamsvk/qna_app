@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import AuthContext from "../../context/auth/authContext";
-
+import "./Ask.css";
 const Ask = () => {
   const authContext = useContext(AuthContext);
   useEffect(() => {
@@ -46,13 +46,16 @@ const Ask = () => {
         name="name"
         value={name}
         onChange={onChange}
+        className="field"
       />
+
       <input
         type="text"
         placeholder="occupation"
         name="occupation"
         value={occupation}
         onChange={onChange}
+        className="field"
       />
       <input
         type="text"
@@ -60,6 +63,7 @@ const Ask = () => {
         name="subject"
         value={subject}
         onChange={onChange}
+        className="field"
       />
       <input
         type="text"
@@ -67,7 +71,9 @@ const Ask = () => {
         name="question"
         value={question}
         onChange={onChange}
+        className="field"
       />
+      <br />
       <input type="submit" value="add question" />
     </form>
   );

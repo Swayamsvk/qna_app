@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import Show from "./Show";
 import AuthContext from "../../context/auth/authContext";
+import "./Qna.css";
 
 const Qna = () => {
   const authContext = useContext(AuthContext);
@@ -35,7 +36,7 @@ const Qna = () => {
   };
   return (
     <div>
-      <div>Questions</div>
+      <div className="head">Questions</div>
       <p>{questionList()}</p>
     </div>
   );
